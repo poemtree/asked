@@ -7,6 +7,6 @@
 </div>
 <div>
   <a class="btn btn-primary" href="/" role="button">돌아가기</a>
-  <a class="btn btn-warning" href="/posts/edit/<%= @post.id %>" role="button">수정하기</a>
-  <a class="btn btn-danger" href="/posts/destroy/<%= @post.id %>" role="button">삭제하기</a>
+  <a class="btn btn-warning" href="/posts/<%= @post.id %>/edit" role="button">수정하기</a>
+  <a class="btn btn-danger" href="/posts/<%= @post.id %>" data-method="delete" data-confirm="삭제 하시겠습니까?" role="button">삭제하기</a>
 </div>

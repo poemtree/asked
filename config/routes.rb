@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   root 'posts#index'
-  #get 'posts/index'
+  get 'posts/index'
 
   get 'posts/new'
 
-  get 'posts/create'
+  post 'posts/create'
 
-  get 'posts/show/:id' => 'posts#show'
+  get 'posts/:id' => 'posts#show'
 
-  get 'posts/edit/:id' => 'posts#edit'
+  get 'posts/:id/edit' => 'posts#edit'
 
-  get 'posts/update'
+  put 'posts/update'
 
-  get 'posts/destroy/:id' => 'posts#destroy'
+  delete 'posts/:id' => 'posts#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

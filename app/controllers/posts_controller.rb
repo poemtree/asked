@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   def create
     post = Post.create(username: params[:username], title: params[:title], content: params[:content])
     flash[:notice] = "글이 작성 되었습니다."
-    redirect_to "/posts/show/#{post.id}"
+    redirect_to "/posts/#{post.id}"
   end
 
   def show
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   def update
     Post.find(params[:id]).update(username: params[:username], title: params[:title], content: params[:content])
     flash[:notice] = "글이 수정 되었습니다."
-    redirect_to "/posts/show/#{params[:id]}"
+    redirect_to "/posts/#{params[:id]}"
   end
 
   def destroy

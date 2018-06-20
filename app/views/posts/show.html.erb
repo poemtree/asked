@@ -1,0 +1,12 @@
+<div class="mt-3 ml-5">
+  <p>번호 : <%= @post.id %></p>
+  <p>제목 : <%= @post.title %></p>
+  <p>쓴이 : <%= @post.username %></p>
+  <p>날짜 : <%= @post.created_at %></p>
+  <p>내용 : <%= @post.content %></p>
+</div>
+<div>
+  <a class="btn btn-primary" href="/" role="button">돌아가기</a>
+  <a class="btn btn-warning" href="/posts/edit/<%= @post.id %>" role="button">수정하기</a>
+  <a class="btn btn-danger" href="/posts/destroy/<%= @post.id %>" role="button">삭제하기</a>
+</div>

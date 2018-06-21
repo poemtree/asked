@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   root 'posts#index'
+
+  get 'signup' => 'users#create'
+
+  get 'users' => 'users#index'
+
 #  get 'posts/index'
 
 #  get 'posts/new'
@@ -10,13 +15,9 @@ Rails.application.routes.draw do
 
 #  get 'posts/:id/edit' => 'posts#edit'
 
-#  put 'posts/update'
+#  put 'posts/:id'
 
 #  delete 'posts/:id' => 'posts#destroy'
-
-  get 'signup' => 'users#create'
-
-  get 'users' => 'users#index'
 
   resources :posts
   # The priority is based upon order of creation: first created -> highest priority.

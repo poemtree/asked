@@ -6,19 +6,27 @@
     <a class="btn btn-primary" href="posts/new" role="button">글 작성</a>
   </div>
 </div>
-<hr>
-<% @posts.each do |post| %>
-  <div class="row mt-1 ml-5">
-    <div class="col-11">
-      <p>번호 : <%= post.id %></p>
-      <p>제목 : <%= post.title %></p>
-      <p>쓴이 : <%= post.username %></p>
-      <p>날짜 : <%= post.created_at %></p>
-      <p>내용 : <%= post.content %></p>
-    </div>
-    <div class="cor-1">
-      <a class="btn btn-primary" href="posts/<%= post.id %>" role="button">글 읽기</a>
-    </div>
-  </div>
-  <hr>
-<% end %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">번호</th>
+      <th scope="col">제목</th>
+      <th scope="col">쓴이</th>
+      <th scope="col">내용</th>
+      <th scope="col">날짜</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <a href="posts/<%= post.id %>">
+          <th scope="row"><%= post.id %></td>
+          <td><%= post.title %></td>
+          <td><%= Post.find(post.id).user.username %></td>
+          <td><%= post.content %></td>
+          <td><%= post.created_at %></td>
+        </a>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

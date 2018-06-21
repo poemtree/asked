@@ -1,0 +1,25 @@
+<div class="mt-3 ml-5">
+    <h1>My post</h1>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">번호</th>
+      <th scope="col">제목</th>
+      <th scope="col">쓴이</th>
+      <th scope="col">내용</th>
+      <th scope="col">날짜</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr class='clickable-row' data-href="posts/<%= post.id %>">
+        <th scope="row"><%= post.id %></td>
+        <td><%= post.title %></td>
+        <td><%= Post.find(post.id).user.username %></td>
+        <td><%= post.content %></td>
+        <td><%= post.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

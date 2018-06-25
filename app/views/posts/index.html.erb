@@ -19,13 +19,11 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <a href="posts/<%= post.id %>">
-          <th scope="row"><%= post.id %></td>
-          <td><%= post.title %></td>
-          <td><%= Post.find(post.id).user.username %></td>
-          <td><%= post.content %></td>
-          <td><%= post.created_at %></td>
-        </a>
+        <th scope="row"><%= post.id %></td>
+        <td><a href="posts/<%= post.id %>"><%= post.title %></a></td>
+        <td><%= Post.find(post.id).user.username %></td>
+        <td><%= post.content %></td>
+        <td><%= post.created_at %></td>
       </tr>
     <% end %>
   </tbody>

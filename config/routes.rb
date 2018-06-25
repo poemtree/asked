@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'signup' => 'users#new'
   post 'users' => 'users#create'
-  get '/login' => 'users#login'
-  get '/logout' => 'users#logout'
-  post '/loginprocess' => 'users#loginprocess'
-  get '/users/posts' => 'users#posts'
+  get 'login' => 'sessions#new'
+  post 'loginprocess' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
+  get 'users/posts' => 'users#posts'
 
 #  get 'posts/index'
 
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
 #  get 'posts/:id/edit' => 'posts#edit'
 
-#  put 'posts/:id'
+#  put 'posts/:id' => 'posts#update'
 
 #  delete 'posts/:id' => 'posts#destroy'
 
